@@ -63,10 +63,10 @@ function displayInventory() {
 };
 //Displays low inventory levels
 function lowInventory() {
-    var query = "SELECT * FROM products WHERE stock_quantity < 10"
+    var query = "SELECT * FROM products WHERE stock_quantity < 5"
     connection.query(query, function(err, res) {
         console.log("========================\n");  
-        console.log("\nItems with low inventory levels less than 10:\n")
+        console.log("\nItems with low inventory levels less than 5:\n")
         for (var i=0; i < res.length; i++) {
             console.log("Item ID: " + res[i].item_id + " | Name: " + res[i].product_name + " | Department: " + res[i].department_name + " | Price: $" + res[i].price + " | Inventory Levels: " + res[i].stock_quantity);
         }
