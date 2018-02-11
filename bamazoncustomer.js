@@ -50,7 +50,7 @@ function itemSelection() {
                 console.log("You are purchasing " + answer.qty + " of " + res[i].product_name + ".");
                 if (answer.qty <= parseInt(res[i].stock_quantity)) {
                     var total = parseFloat(answer.qty) * parseFloat(res[i].price).toFixed(2);
-                    console.log("Purcase Completed! Your total is $" + total);
+                    console.log("Purcase Completed! Your total is $" + total.toFixed(2));
                     var newInventoryTotal = parseInt(res[i].stock_quantity) - parseInt(answer.qty);
                     console.log("There are now " + newInventoryTotal + " prods left.");
                     var updateInventory = connection.query(
@@ -64,10 +64,12 @@ function itemSelection() {
                         }
                     ], function(err, res) {
                         console.log("Inventory Levels Updated!");
+                        connection.end();
                     }
                 )
                 } else {
                     console.log("Insufficient Quantity of " + res[i].product_name);
+                    connection.end();
                 }
             }
         })
