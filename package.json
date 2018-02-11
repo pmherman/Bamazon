@@ -1,0 +1,23 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bamazoncustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmherman/Bamazon.git"
+  },
+  "author": "Paul M Herman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pmherman/Bamazon/issues"
+  },
+  "homepage": "https://github.com/pmherman/Bamazon#readme",
+  "dependencies": {
+    "inquirer": "^5.1.0",
+    "mysql": "^2.15.0"
+  }
+}
