@@ -27,4 +27,5 @@ Execute program in CLI using: node bamazonManager.js
 ![alt text](https://github.com/pmherman/Bamazon/blob/master/bamazonManager.png)
 
 ---------------------------------------Database---------------------------------------
+
 Both schema and seed files are included for creating the localhost database
