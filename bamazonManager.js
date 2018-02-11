@@ -25,7 +25,7 @@ function managerOptions() {
         message: "Please make a selection.",
         choices: ["View products for sale.",
                   "View low inventory.",
-                  "Add to inventory.",
+                  "Add to current inventory levels.",
                   "Add new product.",
                   "Exit the system."
                 ]
@@ -37,7 +37,7 @@ function managerOptions() {
             case "View low inventory.":
                 lowInventory();
                 break;
-            case "Add to inventory.":
+            case "Add to current inventory levels.":
                 addInventory();
                 break;
             case "Add new product.":
