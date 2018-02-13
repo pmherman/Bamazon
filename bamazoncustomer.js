@@ -85,7 +85,7 @@ function itemSelection() {
                 )
                 } else {
                     console.log("Insufficient Quantity of " + res[i].product_name);
-                    connection.end();
+                    itemSelection();
                 }
             }
         })
