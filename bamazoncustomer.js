@@ -42,12 +42,26 @@ function itemSelection() {
     {
         name: "selection",
         type: "input",
-        message: "Please type the Item ID of the item you would like to purchase: "
+        message: "Please type the Item ID of the item you would like to purchase: ",
+        validate: function(value) {
+            if (isNaN(value) == false) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     },
     {
         name: "qty",
         type: "input",
-        message: "How many would you like to purchase?: "
+        message: "How many would you like to purchase?: ",
+        validate: function(value) {
+            if (isNaN(value) == false) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     },
     ])
     .then(function(answer) {

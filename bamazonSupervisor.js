@@ -77,7 +77,14 @@ function newDepartment() {
         {
             name: "overhead",
             type: "input",
-            message: "What is the starting over head costs for this department?: "
+            message: "What is the starting over head costs for this department?: ",
+            validate: function(value) {
+                if (isNaN(value) == false) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         },
         ]).then(function(answer) {
             var query = "INSERT INTO departments SET ?"

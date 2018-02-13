@@ -139,12 +139,26 @@ function addNewItem() {
         {
             name: "price",
             type: "input",
-            message: "Enter Price : $"
+            message: "Enter Price : $",
+            validate: function(value) {
+                if (isNaN(value) == false) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         },
         {
             name: "qty",
             type: "input",
-            message: "Enter quantity of product available"
+            message: "Enter quantity of product available",
+            validate: function(value) {
+                if (isNaN(value) == false) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         },
     ]).then(function(answer) {
         var query = "INSERT INTO products SET ?"
