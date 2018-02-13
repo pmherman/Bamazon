@@ -1,5 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+var Table = require("cli-table");
 
 var connection = mysql.createConnection( {
     host: "localhost",
@@ -55,9 +56,15 @@ function displayInventory() {
     connection.query(query, function(err, inv) {
         console.log("========================\n");        
         console.log("Current available products for sale:\n");
+        var table = new Table({
+            head: ["ITEM_ID", "PRODUCT NAME", "DEPARTMENT NAME", "PRICE", "STOCK \nQTY"],
+            colWidths: [10, 40, 20, 9, 8]
+        });  
         for (var i=0; i < inv.length; i++) {
-            console.log("Item ID: " + inv[i].item_id + " | Name: " + inv[i].product_name + " | Department: " + inv[i].department_name + " | Price: $" + inv[i].price + " | Inventory Levels: " + inv[i].stock_quantity);
+            var productArray = [inv[i].item_id, inv[i].product_name, inv[i].department_name, inv[i].price, inv[i].stock_quantity];
+            table.push(productArray);
         }
+        console.log(table.toString());
         managerOptions();
     })
 };
@@ -67,9 +74,16 @@ function lowInventory() {
     connection.query(query, function(err, res) {
         console.log("========================\n");  
         console.log("\nItems with low inventory levels less than 5:\n")
+        var table2 = new Table({
+            head: ["ITEM_ID", "PRODUCT NAME", "DEPARTMENT NAME", "PRICE", "STOCK \nQTY"],
+            colWidths: [10, 40, 20, 9, 8]
+        }); 
         for (var i=0; i < res.length; i++) {
-            console.log("Item ID: " + res[i].item_id + " | Name: " + res[i].product_name + " | Department: " + res[i].department_name + " | Price: $" + res[i].price + " | Inventory Levels: " + res[i].stock_quantity);
+            var productArray = [res[i].item_id, res[i].product_name, res[i].department_name, res[i].price, res[i].stock_quantity];
+            table2.push(productArray);
+            // console.log("Item ID: " + res[i].item_id + " | Name: " + res[i].product_name + " | Department: " + res[i].department_name + " | Price: $" + res[i].price + " | Inventory Levels: " + res[i].stock_quantity);
         }
+        console.log(table2.toString());
         managerOptions();
     })
 };
