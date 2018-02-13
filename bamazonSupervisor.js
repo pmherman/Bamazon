@@ -59,7 +59,7 @@ function displayProductSales() {
         var totalProfit; 
         for (var i=0; i < res.length; i++) {
             totalProfit = res[i].product_sales - res[i].over_head_costs;
-            var productArray = [res[i].department_id, res[i].department_name, res[i].over_head_costs, res[i].product_sales, totalProfit];
+            var productArray = [res[i].department_id, res[i].department_name, res[i].over_head_costs, res[i].product_sales, totalProfit.toFixed(2)];
             table.push(productArray);
         }
         console.log(table.toString());
