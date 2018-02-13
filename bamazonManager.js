@@ -93,12 +93,26 @@ function addInventory() {
         {
             name: "selection",
             type: "input",
-            message: "Please type the Item ID of the item you would like to increase the quantity of: "
+            message: "Please type the Item ID of the item you would like to increase the quantity of: ",
+            validate: function(value) {
+                if (isNaN(value) == false) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         },
         {
             name: "qty",
             type: "input",
-            message: "How many items are we adding to the current inventory?: "
+            message: "How many items are we adding to the current inventory?: ",
+            validate: function(value) {
+                if (isNaN(value) == false) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         },
         ])
         .then(function(answer) {

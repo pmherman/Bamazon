@@ -48,18 +48,19 @@ function supervisorOptions() {
 }
 
 function displayProductSales() {
-    var query = "SELECT departments.department_id, departments.department_name, departments.over_head_costs, products.price, products.stock_quantity, products.product_sales FROM products INNER JOIN departments ON (products.`department_name` = departments.department_name) GROUP BY departments.department_name";
+    var query = "SELECT departments.department_id, departments.department_name, departments.over_head_costs, products.price, products.stock_quantity, SUM(products.product_sales) AS totalProductsSold FROM products INNER JOIN departments ON (products.`department_name` = departments.department_name) GROUP BY departments.department_name";
     connection.query(query, function(err, res) {
         console.log("========================\n");        
         console.log("Current Product Sales\n");
+        console.log(res);
         var table = new Table({
             head: ["DEPARTMENT\nID", "DEPARTMENT NAME", "OVER HEAD COSTS", "PRODUCT\nSALES", "TOTAL PROFIT"],
             colWidths: [14, 30, 20, 15, 15]
         }); 
         var totalProfit; 
         for (var i=0; i < res.length; i++) {
-            totalProfit = res[i].product_sales - res[i].over_head_costs;
-            var productArray = [res[i].department_id, res[i].department_name, res[i].over_head_costs, res[i].product_sales, totalProfit.toFixed(2)];
+            totalProfit = res[i].totalProductsSold - res[i].over_head_costs;
+            var productArray = [res[i].department_id, res[i].department_name, res[i].over_head_costs, res[i].totalProductsSold, totalProfit.toFixed(2)];
             table.push(productArray);
         }
         console.log(table.toString());
