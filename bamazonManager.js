@@ -163,7 +163,7 @@ function addNewItem() {
 //Exits Bamazon Manager View
 function quitManager() {
     connection.connect(function(err) {
-        console.log("\nLogging off...");
+        console.log("\nLogging off Manager Console...");
         connection.end();
     });
 }
