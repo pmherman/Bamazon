@@ -1,0 +1,11 @@
+item_id,"product_name","department_name",price,stock_quantity,product_sales
+1,"Bluetooth Headphones","Electronics",199.99,50,15000.00
+2,"Grey Infant Crib","Household",249.99,20,1000.00
+3,"Babylon 5: The Complete Series","Movies & TV",79.99,15,7500.00
+4,"iMac 27","Computers",1999.79,14,500.00
+5,"Power Dril","Hardware",69.49,0,2000.00
+6,"Extension Cord","Hardware",4.99,99,1500.00
+7,"42 Television","Electronics",499.99,5,15000.00
+8,"Computer Keyboard","Computers",19.99,5,9000.00
+9,"Security Camera","Electronics",149.79,10,500.00
+10,"Dragon Ball Z: Vegeta Action Figure","Toys & Games",24.99,46,1000.00

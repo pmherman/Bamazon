@@ -41,6 +41,8 @@
 		<dict>
 			<key>connectionEncoding</key>
 			<string>utf8</string>
+			<key>contentFilter</key>
+			<dict/>
 			<key>contentPageNumber</key>
 			<integer>1</integer>
 			<key>contentSelection</key>
@@ -52,19 +54,19 @@
 			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
 			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
 			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
-			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeACl1kZXBhcnRtZW50X2lk
-			0h4fLS5fEA9OU011dGFibGVTdHJpbmejLS8jWE5TU3RyaW5n0h4f
-			MTJeTlNNdXRhYmxlQXJyYXmjMTMjV05TQXJyYXnSHh8iNaIiI18Q
-			D05TS2V5ZWRBcmNoaXZlctE4OVRkYXRhgAEACAARABoAIwAtADIA
-			NwBFAEsAUgBaAGUAbABwAHIAdAB2AHoAfAB+AIAAggCHAIwAkQC6
-			AMEAwgDDAMUAygDVAN4A9AD4AQUBDgETARUBFwEZAR4BKAEqATgB
-			PQFPAVMBXAFhAXABdAF8AYEBhAGWAZkBngAAAAAAAAIBAAAAAAAA
-			ADoAAAAAAAAAAAAAAAAAAAGg
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeACldpdGVtX2lk0h4fLS5f
+			EA9OU011dGFibGVTdHJpbmejLS8jWE5TU3RyaW5n0h4fMTJeTlNN
+			dXRhYmxlQXJyYXmjMTMjV05TQXJyYXnSHh8iNaIiI18QD05TS2V5
+			ZWRBcmNoaXZlctE4OVRkYXRhgAEACAARABoAIwAtADIANwBFAEsA
+			UgBaAGUAbABwAHIAdAB2AHoAfAB+AIAAggCHAIwAkQC6AMEAwgDD
+			AMUAygDVAN4A9AD4AQUBDgETARUBFwEZAR4BKAEqATIBNwFJAU0B
+			VgFbAWoBbgF2AXsBfgGQAZMBmAAAAAAAAAIBAAAAAAAAADoAAAAA
+			AAAAAAAAAAAAAAGa
 			</data>
 			<key>contentSortColIsAsc</key>
 			<true/>
 			<key>contentViewport</key>
-			<string>{{0, 0}, {694, 450}}</string>
+			<string>{{0, 0}, {948, 798}}</string>
 			<key>isToolbarVisible</key>
 			<true/>
 			<key>queries</key>
@@ -80,6 +82,7 @@ product_name VARCHAR(100) NOT NULL,
 department_name VARCHAR (100) NOT NULL,
 price DECIMAL(10,2) NOT NULL,
 stock_quantity INTEGER(10) NOT NULL,
+product_sales DECIMAL(10,2),
 PRIMARY KEY (item_id)
 );
 
@@ -90,7 +93,7 @@ over_head_costs DECIMAL(10,2) NOT NULL,
 PRIMARY KEY (department_id)
 )</string>
 			<key>table</key>
-			<string>departments</string>
+			<string>products</string>
 			<key>view</key>
 			<string>SP_VIEW_CUSTOMQUERY</string>
 			<key>windowVerticalDividerPosition</key>
