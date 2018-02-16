@@ -52,7 +52,6 @@ function displayProductSales() {
     connection.query(query, function(err, res) {
         console.log("========================\n");        
         console.log("Current Product Sales\n");
-        console.log(res);
         var table = new Table({
             head: ["DEPARTMENT\nID", "DEPARTMENT NAME", "OVER HEAD COSTS", "PRODUCT\nSALES", "TOTAL PROFIT"],
             colWidths: [14, 30, 20, 15, 15]
