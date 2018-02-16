@@ -82,7 +82,7 @@ function itemSelection() {
                         {
                             item_id: answer.selection
                         }
-                    ],);
+                    ]);
                     var updateInventory = connection.query(
                         "UPDATE products SET ? WHERE ?",
                         [

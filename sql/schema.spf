@@ -82,7 +82,7 @@ product_name VARCHAR(100) NOT NULL,
 department_name VARCHAR (100) NOT NULL,
 price DECIMAL(10,2) NOT NULL,
 stock_quantity INTEGER(10) NOT NULL,
-product_sales DECIMAL(10,2),
+product_sales DECIMAL(10,2) NOT NULL,
 PRIMARY KEY (item_id)
 );
 
@@ -108,6 +108,24 @@ PRIMARY KEY (department_id)
 	<array/>
 	<key>queryHistory</key>
 	<array>
+		<string>DROP DATABASE IF EXISTS bamazon_db;
+CREATE DATABASE bamazon_db;
+USE bamazon_db;
+CREATE TABLE products (
+item_id INTEGER(10) NOT NULL AUTO_INCREMENT,
+product_name VARCHAR(100) NOT NULL,
+department_name VARCHAR (100) NOT NULL,
+price DECIMAL(10,2) NOT NULL,
+stock_quantity INTEGER(10) NOT NULL,
+product_sales DECIMAL(10,2),
+PRIMARY KEY (item_id)
+);
+CREATE TABLE departments (
+department_id INTEGER(10) NOT NULL AUTO_INCREMENT,
+department_name VARCHAR(100) NOT NULL,
+over_head_costs DECIMAL(10,2) NOT NULL,
+PRIMARY KEY (department_id)
+)</string>
 		<string>DROP TABLE IF EXISTS departments;
 CREATE TABLE departments (
 department_id INTEGER(10) NOT NULL AUTO_INCREMENT,
@@ -169,9 +187,6 @@ WHERE item_id = "4"</string>
 SET stock_quantity = stock_quantity - 5
 WHERE item_id = 4</string>
 		<string>UPDATE products
-SET stock_quantity = -5
-WHERE item_id = 4</string>
-		<string>UPDATE stock_quantity
 SET stock_quantity = -5
 WHERE item_id = 4</string>
 	</array>
