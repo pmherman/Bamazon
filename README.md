@@ -43,3 +43,7 @@ Execute program in CLI using: node bamazonSupervisor.js
 Both schema and seed files are included for creating the localhost database
 
 --CSV seed files need to be aligned by column name when importing--
+
+---------------------------------------Video Demo---------------------------------------
+
+https://youtu.be/JIQvX-YnRfU
